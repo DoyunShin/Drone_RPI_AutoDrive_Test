@@ -98,7 +98,7 @@ def hovering(port):
     drone.sendControlPosition(1.0, 0, 0, 0.5, 0, 0)
     for i in range(5, 0, -1):
         print("{0}".format(i))
-        sleep(2)
+        sleep(0.01)
 
 
     print("Return Home")
@@ -116,7 +116,7 @@ def drone_main():
     print('Started Python')
     print('')
 
-#   beep(port)
+    beep(port)
 
     ping(port)
     
