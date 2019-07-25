@@ -13,7 +13,9 @@ def func2():
 
 
 def main():
-    p1 = Process(target=func1)
+    p = process
+
+    p1 = process
     p2 = Process(target=func2)
 
     p1.start
