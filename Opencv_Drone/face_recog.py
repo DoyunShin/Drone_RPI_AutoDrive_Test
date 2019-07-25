@@ -19,7 +19,7 @@ class FaceRecog():
         self.isEnabled_recog = True
 
         # Load sample pictures and learn how to recognize it.
-        dirname = 'D:/Python/Opencv_Drone/knowns'
+        dirname = 'D:/git/Github-Desktop/E_DRONE_RASPI/'
         files = os.listdir(dirname)
         for filename in files:
             name, ext = os.path.splitext(filename)			
@@ -49,7 +49,7 @@ class FaceRecog():
         frame = self.camera.get_frame()
 
         # Resize frame of video to 1/4 size for faster face recognition processing
-        small_frame = cv2.resize(frame, (0, 0), fx=0.25, fy=0.25)
+        small_frame = cv2.resize(frame, (0, 0), fx=1, fy=1)
 
         # Convert the image from BGR color (which OpenCV uses) to RGB color (which face_recognition uses)
         rgb_small_frame = small_frame[:, :, ::-1]
