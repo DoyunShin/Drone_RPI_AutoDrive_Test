@@ -2,4 +2,6 @@ e_drone
 opencv-contrib-python 
 dlib 
 face_recognition 
-flask
+Flask
+Flask-Compress
+requests
