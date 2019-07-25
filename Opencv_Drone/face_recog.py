@@ -108,6 +108,7 @@ class FaceRecog():
         cv2.imwrite('images/findImage.jpg', frame)
 
 
+
 if __name__ == '__main__':
     face_recog = FaceRecog()
     print(face_recog.known_face_names)
