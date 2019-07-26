@@ -207,10 +207,7 @@ def detect_person_detail(pface_recog, p_loopcount):
                 pickle.dump(check, file)
             
             break
-        else:
-            check = 'false'
-            with open('check.ck', 'wb') as file:
-                pickle.dump(check, file)
+        
 
             # targetctl = face_recog.detect_person
             # print(targetctl)

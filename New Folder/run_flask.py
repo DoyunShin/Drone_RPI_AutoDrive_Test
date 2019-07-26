@@ -14,6 +14,15 @@ def main():
 
 #debug
 
+@app.route('/dbg')
+def dbg_main_root():
+   return render_template("debug.html")
+
+@app.route('/dbg/index.html')
+def dbg_main_root_s():
+   return render_template("debug.html")
+
+
 @app.route('/dbg/index.html')
 def dbg_main():
    return render_template("debug.html")
