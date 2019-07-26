@@ -6,7 +6,7 @@ import camera
 import os
 import numpy as np
 import time
-import requests
+#import requests
 
 class FaceRecog():
     def __init__(self):
@@ -192,10 +192,10 @@ def detect_person_detail(pface_recog, p_loopcount):
             isFound = True
             print('[LOG] 찾은 좌표 : ', pface_recog.face_locations)        # 찾은 좌표 출력
             pface_recog.save_frame_to_image(frame)   # 찾은 사진 저장
-            URL = 'http://localhost/checktrue'
-            data = {'data1': 'True'}
-            res = requests.post(URL, data=data)
-            res.request
+            #URL = 'http://localhost/checktrue'
+            #data = {'data1': 'True'}
+            #res = requests.post(URL, data=data)
+            #res.request
             break
             # targetctl = face_recog.detect_person
             # print(targetctl)
@@ -216,10 +216,10 @@ def detect_person_detail(pface_recog, p_loopcount):
 
 
 if __name__ == '__main__':
-    URL = 'http://localhost/checkfalse'
-    data = {'data1': 'False'}
-    res = requests.post(URL, data=data)
-    res.request
+    #URL = 'http://localhost/checkfalse'
+    #data = {'data1': 'False'}
+    #res = requests.post(URL, data=data)
+    #res.request
 
     face_recog = FaceRecog()
     isFound, drone_target_dest = detect_person_detail(face_recog, 600 )   # 60회 -> 약 8초

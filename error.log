@@ -1,165 +1,35 @@
-Installing collected packages: dlib, Pillow, Click, face-recognition-models, face-recognition, MarkupSafe, Jinja2, itsdangerous, Werkzeug, flask
-  Running setup.py install for dlib ... error
-    ERROR: Command errored out with exit status 1:
-     command: 'C:\Program Files\Python37\python.exe' -u -c 'import sys, setuptools, tokenize; sys.argv[0] = '"'"'C:\\Users\\doyun\\AppData\\Local\\Temp\\pip-install-1fv4hlfp\\dlib\\setup.py'"'"'; __file__='"'"'C:\\Users\\doyun\\AppData\\Local\\Temp\\pip-install-1fv4hlfp\\dlib\\setup.py'"'"';f=getattr(tokenize, '"'"'open'"'"', open)(__file__);code=f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' install --record 'C:\Users\doyun\AppData\Local\Temp\pip-record-ttemv_a7\install-record.txt' --single-version-externally-managed --compile
-         cwd: C:\Users\doyun\AppData\Local\Temp\pip-install-1fv4hlfp\dlib\
-    Complete output (55 lines):
-    running install
-    running build
-    running build_py
-    package init file 'dlib\__init__.py' not found (or not a regular file)
-    running build_ext
-    Traceback (most recent call last):
-      File "C:\Users\doyun\AppData\Local\Temp\pip-install-1fv4hlfp\dlib\setup.py", line 120, in get_cmake_version
-        out = subprocess.check_output(['cmake', '--version'])
-      File "C:\Program Files\Python37\lib\subprocess.py", line 395, in check_output
-        **kwargs).stdout
-      File "C:\Program Files\Python37\lib\subprocess.py", line 472, in run
-        with Popen(*popenargs, **kwargs) as process:
-      File "C:\Program Files\Python37\lib\subprocess.py", line 775, in __init__
-        restore_signals, start_new_session)
-      File "C:\Program Files\Python37\lib\subprocess.py", line 1178, in _execute_child
-        startupinfo)
-    FileNotFoundError: [WinError 2] 지정된 파일을 찾을 수 없습니다
-
-    During handling of the above exception, another exception occurred:
-
-    Traceback (most recent call last):
-      File "<string>", line 1, in <module>
-      File "C:\Users\doyun\AppData\Local\Temp\pip-install-1fv4hlfp\dlib\setup.py", line 261, in <module>
-        'Topic :: Software Development',
-      File "C:\Program Files\Python37\lib\site-packages\setuptools\__init__.py", line 145, in setup
-        return distutils.core.setup(**attrs)
-      File "C:\Program Files\Python37\lib\distutils\core.py", line 148, in setup
-        dist.run_commands()
-      File "C:\Program Files\Python37\lib\distutils\dist.py", line 966, in run_commands
-        self.run_command(cmd)
-      File "C:\Program Files\Python37\lib\distutils\dist.py", line 985, in run_command
-        cmd_obj.run()
-      File "C:\Program Files\Python37\lib\site-packages\setuptools\command\install.py", line 61, in run
-        return orig.install.run(self)
-      File "C:\Program Files\Python37\lib\distutils\command\install.py", line 545, in run
-        self.run_command('build')
-      File "C:\Program Files\Python37\lib\distutils\cmd.py", line 313, in run_command
-        self.distribution.run_command(command)
-      File "C:\Program Files\Python37\lib\distutils\dist.py", line 985, in run_command
-        cmd_obj.run()
-      File "C:\Program Files\Python37\lib\distutils\command\build.py", line 135, in run
-        self.run_command(cmd_name)
-      File "C:\Program Files\Python37\lib\distutils\cmd.py", line 313, in run_command
-        self.distribution.run_command(command)
-      File "C:\Program Files\Python37\lib\distutils\dist.py", line 985, in run_command
-        cmd_obj.run()
-      File "C:\Users\doyun\AppData\Local\Temp\pip-install-1fv4hlfp\dlib\setup.py", line 129, in run
-        cmake_version = self.get_cmake_version()
-      File "C:\Users\doyun\AppData\Local\Temp\pip-install-1fv4hlfp\dlib\setup.py", line 125, in get_cmake_version
-        "\n*******************************************************************\n")
-    RuntimeError:
-    *******************************************************************
-     CMake must be installed to build the following extensions: dlib
-    *******************************************************************
-
-    ----------------------------------------
-ERROR: Command errored out with exit status 1: 'C:\Program Files\Python37\python.exe' -u -c 'import sys, setuptools, tokenize; sys.argv[0] = '"'"'C:\\Users\\doyun\\AppData\\Local\\Temp\\pip-install-1fv4hlfp\\dlib\\setup.py'"'"'; __file__='"'"'C:\\Users\\doyun\\AppData\\Local\\Temp\\pip-install-1fv4hlfp\\dlib\\setup.py'"'"';f=getattr(tokenize, '"'"'open'"'"', open)(__file__);code=f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' install --record 'C:\Users\doyun\AppData\Local\Temp\pip-record-ttemv_a7\install-record.txt' --single-version-externally-managed --compile Check the logs for full command output.
-
-D:\git\GitHub-Desktop\e_drone_raspi>python -m pip install --upgrade cmake
-Collecting cmake
-  Downloading https://files.pythonhosted.org/packages/34/39/ddc6307052fe11f31fb74909049b0bb6a656b940ae64c42da38b3154885b/cmake-3.14.4-py3-none-win_amd64.whl (30.7MB)
-     |████████████████████████████████| 30.7MB 595kB/s
-Installing collected packages: cmake
-Successfully installed cmake-3.14.4
-
-D:\git\GitHub-Desktop\e_drone_raspi>python -m pip install --upgrade -r requirements.txt
-Requirement already up-to-date: e_drone in c:\program files\python37\lib\site-packages (from -r requirements.txt (line 1)) (0.1.31)
-Requirement already up-to-date: opencv-contrib-python in c:\program files\python37\lib\site-packages (from -r requirements.txt (line 2)) (4.1.0.25)
-Collecting dlib (from -r requirements.txt (line 3))
-  Using cached https://files.pythonhosted.org/packages/05/57/e8a8caa3c89a27f80bc78da39c423e2553f482a3705adc619176a3a24b36/dlib-19.17.0.tar.gz
-Collecting face_recognition (from -r requirements.txt (line 4))
-  Using cached https://files.pythonhosted.org/packages/3f/ed/ad9a28042f373d4633fc8b49109b623597d6f193d3bbbef7780a5ee8eef2/face_recognition-1.2.3-py2.py3-none-any.whl
-Collecting flask (from -r requirements.txt (line 5))
-  Using cached https://files.pythonhosted.org/packages/9b/93/628509b8d5dc749656a9641f4caf13540e2cdec85276964ff8f43bbb1d3b/Flask-1.1.1-py2.py3-none-any.whl
-Requirement already satisfied, skipping upgrade: numpy>=1.15.4 in c:\program files\python37\lib\site-packages (from e_drone->-r requirements.txt (line 1)) (1.16.4)
-Requirement already satisfied, skipping upgrade: colorama>=0.4.0 in c:\users\doyun\appdata\roaming\python\python37\site-packages (from e_drone->-r requirements.txt (line 1)) (0.4.1)
-Requirement already satisfied, skipping upgrade: pyserial>=3.4 in c:\program files\python37\lib\site-packages (from e_drone->-r requirements.txt (line 1)) (3.4)
-Collecting Pillow (from face_recognition->-r requirements.txt (line 4))
-  Using cached https://files.pythonhosted.org/packages/ae/96/6f83deebfcd20a5d4ad35e4e989814a16559d8715741457e670aae1a5a09/Pillow-6.1.0-cp37-cp37m-win_amd64.whl
-Collecting Click>=6.0 (from face_recognition->-r requirements.txt (line 4))
-  Using cached https://files.pythonhosted.org/packages/fa/37/45185cb5abbc30d7257104c434fe0b07e5a195a6847506c074527aa599ec/Click-7.0-py2.py3-none-any.whl
-Collecting face-recognition-models>=0.3.0 (from face_recognition->-r requirements.txt (line 4))
-  Using cached https://files.pythonhosted.org/packages/cf/3b/4fd8c534f6c0d1b80ce0973d01331525538045084c73c153ee6df20224cf/face_recognition_models-0.3.0.tar.gz
-Collecting Jinja2>=2.10.1 (from flask->-r requirements.txt (line 5))
-  Using cached https://files.pythonhosted.org/packages/1d/e7/fd8b501e7a6dfe492a433deb7b9d833d39ca74916fa8bc63dd1a4947a671/Jinja2-2.10.1-py2.py3-none-any.whl
-Collecting itsdangerous>=0.24 (from flask->-r requirements.txt (line 5))
-  Using cached https://files.pythonhosted.org/packages/76/ae/44b03b253d6fade317f32c24d100b3b35c2239807046a4c953c7b89fa49e/itsdangerous-1.1.0-py2.py3-none-any.whl
-Collecting Werkzeug>=0.15 (from flask->-r requirements.txt (line 5))
-  Using cached https://files.pythonhosted.org/packages/d1/ab/d3bed6b92042622d24decc7aadc8877badf18aeca1571045840ad4956d3f/Werkzeug-0.15.5-py2.py3-none-any.whl
-Collecting MarkupSafe>=0.23 (from Jinja2>=2.10.1->flask->-r requirements.txt (line 5))
-  Using cached https://files.pythonhosted.org/packages/65/c6/2399700d236d1dd681af8aebff1725558cddfd6e43d7a5184a675f4711f5/MarkupSafe-1.1.1-cp37-cp37m-win_amd64.whl
-Installing collected packages: dlib, Pillow, Click, face-recognition-models, face-recognition, MarkupSafe, Jinja2, itsdangerous, Werkzeug, flask
-  Running setup.py install for dlib ... error
-    ERROR: Command errored out with exit status 1:
-     command: 'C:\Program Files\Python37\python.exe' -u -c 'import sys, setuptools, tokenize; sys.argv[0] = '"'"'C:\\Users\\doyun\\AppData\\Local\\Temp\\pip-install-cggnlv46\\dlib\\setup.py'"'"'; __file__='"'"'C:\\Users\\doyun\\AppData\\Local\\Temp\\pip-install-cggnlv46\\dlib\\setup.py'"'"';f=getattr(tokenize, '"'"'open'"'"', open)(__file__);code=f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' install --record 'C:\Users\doyun\AppData\Local\Temp\pip-record-d6age1xk\install-record.txt' --single-version-externally-managed --compile
-         cwd: C:\Users\doyun\AppData\Local\Temp\pip-install-cggnlv46\dlib\
-    Complete output (57 lines):
-    running install
-    running build
-    running build_py
-    package init file 'dlib\__init__.py' not found (or not a regular file)
-    running build_ext
-    Building extension for Python 3.7.4 (tags/v3.7.4:e09359112e, Jul  8 2019, 20:34:20) [MSC v.1916 64 bit (AMD64)]
-    Invoking CMake setup: 'cmake C:\Users\doyun\AppData\Local\Temp\pip-install-cggnlv46\dlib\tools\python -DCMAKE_LIBRARY_OUTPUT_DIRECTORY=C:\Users\doyun\AppData\Local\Temp\pip-install-cggnlv46\dlib\build\lib.win-amd64-3.7 -DPYTHON_EXECUTABLE=C:\Program Files\Python37\python.exe -DCMAKE_LIBRARY_OUTPUT_DIRECTORY_RELEASE=C:\Users\doyun\AppData\Local\Temp\pip-install-cggnlv46\dlib\build\lib.win-amd64-3.7 -A x64'
-    -- Building for: Visual Studio 16 2019
-    -- Selecting Windows SDK version  to target Windows 10.0.18362.
-    -- The C compiler identification is unknown
-    -- The CXX compiler identification is unknown
-    CMake Error in CMakeLists.txt:
-      No CMAKE_C_COMPILER could be found.
-
-
-
-    CMake Error in CMakeLists.txt:
-      No CMAKE_CXX_COMPILER could be found.
-
-
-
-    -- Configuring incomplete, errors occurred!
-    See also "C:/Users/doyun/AppData/Local/Temp/pip-install-cggnlv46/dlib/build/temp.win-amd64-3.7/Release/CMakeFiles/CMakeOutput.log".
-    See also "C:/Users/doyun/AppData/Local/Temp/pip-install-cggnlv46/dlib/build/temp.win-amd64-3.7/Release/CMakeFiles/CMakeError.log".
-    Traceback (most recent call last):
-      File "<string>", line 1, in <module>
-      File "C:\Users\doyun\AppData\Local\Temp\pip-install-cggnlv46\dlib\setup.py", line 261, in <module>
-        'Topic :: Software Development',
-      File "C:\Program Files\Python37\lib\site-packages\setuptools\__init__.py", line 145, in setup
-        return distutils.core.setup(**attrs)
-      File "C:\Program Files\Python37\lib\distutils\core.py", line 148, in setup
-        dist.run_commands()
-      File "C:\Program Files\Python37\lib\distutils\dist.py", line 966, in run_commands
-        self.run_command(cmd)
-      File "C:\Program Files\Python37\lib\distutils\dist.py", line 985, in run_command
-        cmd_obj.run()
-      File "C:\Program Files\Python37\lib\site-packages\setuptools\command\install.py", line 61, in run
-        return orig.install.run(self)
-      File "C:\Program Files\Python37\lib\distutils\command\install.py", line 545, in run
-        self.run_command('build')
-      File "C:\Program Files\Python37\lib\distutils\cmd.py", line 313, in run_command
-        self.distribution.run_command(command)
-      File "C:\Program Files\Python37\lib\distutils\dist.py", line 985, in run_command
-        cmd_obj.run()
-      File "C:\Program Files\Python37\lib\distutils\command\build.py", line 135, in run
-        self.run_command(cmd_name)
-      File "C:\Program Files\Python37\lib\distutils\cmd.py", line 313, in run_command
-        self.distribution.run_command(command)
-      File "C:\Program Files\Python37\lib\distutils\dist.py", line 985, in run_command
-        cmd_obj.run()
-      File "C:\Users\doyun\AppData\Local\Temp\pip-install-cggnlv46\dlib\setup.py", line 135, in run
-        self.build_extension(ext)
-      File "C:\Users\doyun\AppData\Local\Temp\pip-install-cggnlv46\dlib\setup.py", line 172, in build_extension
-        subprocess.check_call(cmake_setup, cwd=build_folder)
-      File "C:\Program Files\Python37\lib\subprocess.py", line 347, in check_call
-        raise CalledProcessError(retcode, cmd)
-    subprocess.CalledProcessError: Command '['cmake', 'C:\\Users\\doyun\\AppData\\Local\\Temp\\pip-install-cggnlv46\\dlib\\tools\\python', '-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=C:\\Users\\doyun\\AppData\\Local\\Temp\\pip-install-cggnlv46\\dlib\\build\\lib.win-amd64-3.7', '-DPYTHON_EXECUTABLE=C:\\Program Files\\Python37\\python.exe', '-DCMAKE_LIBRARY_OUTPUT_DIRECTORY_RELEASE=C:\\Users\\doyun\\AppData\\Local\\Temp\\pip-install-cggnlv46\\dlib\\build\\lib.win-amd64-3.7', '-A', 'x64']' returned non-zero exit status 1.
-    ----------------------------------------
-ERROR: Command errored out with exit status 1: 'C:\Program Files\Python37\python.exe' -u -c 'import sys, setuptools, tokenize; sys.argv[0] = '"'"'C:\\Users\\doyun\\AppData\\Local\\Temp\\pip-install-cggnlv46\\dlib\\setup.py'"'"'; __file__='"'"'C:\\Users\\doyun\\AppData\\Local\\Temp\\pip-install-cggnlv46\\dlib\\setup.py'"'"';f=getattr(tokenize, '"'"'open'"'"', open)(__file__);code=f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' install --record 'C:\Users\doyun\AppData\Local\Temp\pip-record-d6age1xk\install-record.txt' --single-version-externally-managed --compile Check the logs for full command output.
-
-D:\git\GitHub-Desktop\e_drone_raspi>python -m pip install --upgrade cmake
-Requirement already up-to-date: cmake in c:\program files\python37\lib\site-packages (3.14.4)
+27.0.0.1 - - [26/Jul/2019 01:11:11] "POST /checktrue HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "C:\Program Files\Python37\lib\site-packages\flask\app.py", line 2463, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "C:\Program Files\Python37\lib\site-packages\flask\app.py", line 2449, in wsgi_app
+    response = self.handle_exception(e)
+  File "C:\Program Files\Python37\lib\site-packages\flask\app.py", line 1866, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Program Files\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Program Files\Python37\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Program Files\Python37\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Program Files\Python37\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Program Files\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Program Files\Python37\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Program Files\Python37\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\git\GitHub-Desktop\e_drone_raspi\New Folder\run_flask.py", line 19, in checktrue
+    return redirect(url_for('success', name = check))
+  File "C:\Program Files\Python37\lib\site-packages\flask\helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\Program Files\Python37\lib\site-packages\flask\app.py", line 2215, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "C:\Program Files\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Program Files\Python37\lib\site-packages\flask\helpers.py", line 358, in url_for
+    endpoint, values, method=method, force_external=external
+  File "C:\Program Files\Python37\lib\site-packages\werkzeug\routing.py", line 2020, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'success' with values ['name']. Did you mean 'static' instead?
