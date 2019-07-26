@@ -3,7 +3,7 @@
 import face_recognition
 import cv2
 import camera
-import os
+import os , copy
 import numpy as np
 import time
 import pickle
@@ -16,8 +16,9 @@ class FaceRecog():
         # instead.
         self.camera = camera.VideoCamera()
         self.known_face_encodings = []
-
+        
         self.known_face_names = []
+        self.org_frame = []
         dirname = 'knowns'
 
         # Load sample pictures and learn how to recognize it.
@@ -80,9 +81,9 @@ class FaceRecog():
 
                 self.face_names.append(name)
             
-            # 사람을 찾았을때 원본 frame 저장.
+            # 사람을 찾았을때 원본 frame을 org_frame에 저장.
             if len(self.face_names)> 0:
-                self.save_frame_to_org_image(frame)
+                self.org_frame = copy.copy(frame)
 
         self.process_this_frame = not self.process_this_frame
 
@@ -114,10 +115,11 @@ class FaceRecog():
     def save_frame_to_image(self,pframe):
         # 전달 받은 frame을 저장 한다. frame = self.get_frame_raw()
         cv2.imwrite('images/findImage.jpg', pframe)
-    
-    def save_frame_to_org_image(self,pframe):
-        # 전달 받은  frame을 저장 한다. frame = self.get_frame_raw()
-        cv2.imwrite('images/findImage_org.jpg', pframe)
+        self.save_frame_to_org_image()
+
+    def save_frame_to_org_image(self):
+        # 원원본 org_frame을 저장 한다.
+        cv2.imwrite('images/findImage_org.jpg', self.org_frame)
 
     def detect_any_person(self):
         # 카메라 각도 Angle of View (diagonal) : 69.1 degree

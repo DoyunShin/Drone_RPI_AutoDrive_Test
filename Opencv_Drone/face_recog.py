@@ -3,7 +3,7 @@
 import face_recognition
 import cv2
 import camera
-import os
+import os, copy
 import numpy as np
 
 
@@ -15,7 +15,7 @@ class FaceRecog():
         self.camera = camera.VideoCamera()
         self.known_face_encodings = []
         self.known_face_names = []
-
+        self.org_frame = []
         self.isEnabled_recog = True
 
         # Load sample pictures and learn how to recognize it.
@@ -74,6 +74,8 @@ class FaceRecog():
                     name = self.known_face_names[index]
 
                 self.face_names.append(name)
+                if len(self.face_names)> 0:
+                self.org_frame = copy.copy(frame)
 
         self.process_this_frame = not self.process_this_frame
 
@@ -106,6 +108,11 @@ class FaceRecog():
     def save_frame_to_image(self):
         frame = self.get_frame_raw()
         cv2.imwrite('images/findImage.jpg', frame)
+        self.save_frame_to_org_image()
+
+    def save_frame_to_org_image(self):
+        # 전달 받은 frame을 저장 한다. frame = self.get_frame_raw()
+        cv2.imwrite('images/findImage_org.jpg', self.org_frame)
 
 
 
