@@ -79,6 +79,10 @@ class FaceRecog():
                     name = self.known_face_names[index]
 
                 self.face_names.append(name)
+            
+            # 사람을 찾았을때 원본 frame 저장.
+            if len(self.face_names)> 0:
+                self.save_frame_to_org_image(frame)
 
         self.process_this_frame = not self.process_this_frame
 
@@ -97,7 +101,6 @@ class FaceRecog():
             cv2.rectangle(frame, (left, bottom - 35), (right, bottom), (0, 0, 255), cv2.FILLED)
             font = cv2.FONT_HERSHEY_DUPLEX
             cv2.putText(frame, name, (left + 6, bottom - 6), font, 1.0, (255, 255, 255), 1)
-
         return frame
 
     def get_jpg_bytes(self):
@@ -111,6 +114,10 @@ class FaceRecog():
     def save_frame_to_image(self,pframe):
         # 전달 받은 frame을 저장 한다. frame = self.get_frame_raw()
         cv2.imwrite('images/findImage.jpg', pframe)
+    
+    def save_frame_to_org_image(self,pframe):
+        # 전달 받은  frame을 저장 한다. frame = self.get_frame_raw()
+        cv2.imwrite('images/findImage_org.jpg', pframe)
 
     def detect_any_person(self):
         # 카메라 각도 Angle of View (diagonal) : 69.1 degree
@@ -157,11 +164,6 @@ class FaceRecog():
         #print(result_loc)
         target_angle, target_height = result_loc[0]
         return round(target_angle,0), round(target_height,2)
-
-
-
-
-
 
 
 def detect_person_detail(pface_recog, p_loopcount):

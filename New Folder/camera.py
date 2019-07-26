@@ -5,15 +5,15 @@ import cv2
 class VideoCamera(object):
     def __init__(self):
         # 내 PC 카메라 사용
-        self.video = cv2.VideoCapture(0)
+        #self.video = cv2.VideoCapture(0)
         # self.video.set(3, 640)
         # self.video.set(4, 480)
 
         # 파일에서 영상을 사용 시
         #self.video = cv2.VideoCapture('abc.mp4')
-        
+
         # URL 스트리밍에서 가져올시 - PI zero
-        #self.video = cv2.VideoCapture('http://192.168.0.23:8090/?action=stream')
+        self.video = cv2.VideoCapture('http://192.168.0.23:8090/?action=stream')
 
         # 비디오 size
         self.video_width = self.video.get(3)
