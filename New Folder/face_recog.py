@@ -179,6 +179,7 @@ def detect_person_detail(pface_recog, p_loopcount):
 
     # loop회수 만큼 반복 하면서 사진을 읽어 해당 사람을 찾는 while문
     while lcount < p_loopcount:
+
         lcount = lcount + 1
 
         # 카메라에서 frame 을 분석 하여 사람을 찾음.
@@ -204,6 +205,11 @@ def detect_person_detail(pface_recog, p_loopcount):
                 pickle.dump(check, file)
             
             break
+        else:
+            check = 'false'
+            with open('check.ck', 'wb') as file:
+                pickle.dump(check, file)
+
             # targetctl = face_recog.detect_person
             # print(targetctl)
             # face_recog.process_this_frame= False
@@ -232,7 +238,7 @@ if __name__ == '__main__':
         pickle.dump(check, file)
 
     face_recog = FaceRecog()
-    isFound, drone_target_dest = detect_person_detail(face_recog, 600 )   # 60회 -> 약 8초
+    isFound, drone_target_dest = detect_person_detail(face_recog, 60000 )   # 60회 -> 약 8초
     if isFound:
         print('[LOG] 사람을 찾았습니다.',isFound,'  드론 위치 조정 => ', drone_target_dest)
     else:

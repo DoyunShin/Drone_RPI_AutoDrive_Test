@@ -26,5 +26,3 @@ if __name__ == '__main__':
       pickle.dump(check, file)
    app.run(host="0.0.0.0", threaded=True, port=80)
 
-
-
