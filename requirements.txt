@@ -4,4 +4,4 @@ dlib
 face_recognition 
 Flask
 Flask-Compress
-requests
+google-cloud-vision

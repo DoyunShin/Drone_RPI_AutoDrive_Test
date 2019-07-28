@@ -7,7 +7,7 @@ import os , copy
 import numpy as np
 import time
 import pickle
-
+import subprocess
 
 class FaceRecog():
     def __init__(self):
@@ -207,7 +207,10 @@ def detect_person_detail(pface_recog, p_loopcount):
             check = 'true'
             with open('check.ck', 'wb') as file:
                 pickle.dump(check, file)
-            
+                
+            #구글 호출
+            subprocess.call(['python', 'google_recog.py'])
+
             break
         
 

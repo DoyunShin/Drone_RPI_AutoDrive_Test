@@ -13,17 +13,8 @@ def main():
             print("Complete!")
             break
 
-        
-    
-
-
-
-
 
 if __name__ == '__main__':
     main()
 
-
-        
-
-    
+   
